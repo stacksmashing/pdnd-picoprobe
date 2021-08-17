@@ -27,6 +27,9 @@
 #include <stdio.h>
 #include <string.h>
 
+#include "pdnd/pdnd.h"
+#include "pdnd/pdnd_display.h"
+
 #include "bsp/board.h"
 #include "tusb.h"
 
@@ -40,8 +43,13 @@
 // UART1 for picoprobe to target device
 
 int main(void) {
-
     board_init();
+
+    pdnd_initialize();
+    pdnd_enable_buffers(1);
+    pdnd_display_initialize();
+    cls(false);
+    pprintf("Picoprobe");
     usb_serial_init();
     cdc_uart_init();
     tusb_init();

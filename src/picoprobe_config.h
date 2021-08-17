@@ -48,16 +48,17 @@
 
 // PIO config
 #define PROBE_SM 0
-#define PROBE_PIN_OFFSET 2
-#define PROBE_PIN_SWCLK PROBE_PIN_OFFSET + 0 // 2
-#define PROBE_PIN_SWDIO PROBE_PIN_OFFSET + 1 // 3
+// #define PROBE_PIN_OFFSET 2
+#define PROBE_PIN_SWDIO_IN  2  // PDND
+#define PROBE_PIN_SWDIO_OUT 10 // PDND
+#define PROBE_PIN_SWCLK     9  // PDND
 
 // Target reset config
-#define PROBE_PIN_RESET 6
+#define PROBE_PIN_RESET 11 // PDND
 
 // UART config
-#define PICOPROBE_UART_TX 4
-#define PICOPROBE_UART_RX 5
+#define PICOPROBE_UART_TX 26
+#define PICOPROBE_UART_RX 27
 #define PICOPROBE_UART_INTERFACE uart1
 #define PICOPROBE_UART_BAUDRATE 115200
 
